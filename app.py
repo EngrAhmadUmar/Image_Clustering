@@ -25,7 +25,7 @@ def main():
     st.markdown(html_temp, unsafe_allow_html=True)
     default_value_goes_here = ""
 
-    uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
+    uploaded_file = st.file_uploader("Choose a XLSX file (it must contain pixel details of images)", type="xlsx")
 
     global dataframe
     if uploaded_file:
@@ -33,7 +33,7 @@ def main():
         dataframe = df
    
     result = ""
-    if st.button("Predict"):
+    if st.button("Cluster"):
       featureshost = dataframe
       model = KMeans(n_clusters=10, max_iter=1000)
       prediction = model.fit(featureshost)
