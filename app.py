@@ -33,7 +33,7 @@ def main():
         dataframe = df
    
     result = ""
-    if st.button("Cluster"):
+    if st.button("Display Image Clusters"):
       featureshost = dataframe
       model = KMeans(n_clusters=10, max_iter=1000)
       prediction = model.fit(featureshost)
